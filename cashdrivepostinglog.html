@@ -7,7 +7,7 @@
 <meta http-equiv="Pragma" content="no-cache" />
 <meta http-equiv="Expires" content="0" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
-<meta name="theme-color" content="#c8102e" />
+<meta name="theme-color" content="#4a5a66" />
 <title>CashDrive Posting Log</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap');
@@ -19,12 +19,14 @@
     --surface3: #e2dfda;
     --border: #ddd9d4;
     --border2: #c5c0b9;
-    --accent: #c8102e;
-    --accent2: #9e0d25;
-    --accent3: #71091b;
-    --accent-light: #fbdde1;
-    --accent-mid: rgba(200,16,46,0.14);
-    --accent-soft: #f6d9dd;
+    /* Chrome & Asphalt: brushed steel over a deep charcoal base, the way a
+       showroom finish reads rather than a warning colour. */
+    --accent: #4a5a66;
+    --accent2: #37444d;
+    --accent3: #262e34;
+    --accent-light: #e7ebed;
+    --accent-mid: rgba(74,90,102,0.14);
+    --accent-soft: #dde3e6;
     --text: #17181a;
     --text2: #52565a;
     --text3: #8d9095;
@@ -196,7 +198,7 @@
     color: white;
     position: relative;
     overflow: hidden;
-    box-shadow: 0 4px 14px rgba(200,16,46,0.25);
+    box-shadow: 0 4px 14px rgba(74,90,102,0.25);
   }
   .welcome-banner::before {
     content: '';
@@ -444,10 +446,10 @@
     background: linear-gradient(135deg, var(--accent) 0%, var(--accent2) 100%);
     color: white;
     width: 100%; padding: 14px; margin-top: 8px;
-    box-shadow: 0 2px 10px rgba(200,16,46,0.3);
+    box-shadow: 0 2px 10px rgba(74,90,102,0.3);
     font-size: 15px;
   }
-  .btn-primary:hover { box-shadow: 0 4px 14px rgba(200,16,46,0.4); }
+  .btn-primary:hover { box-shadow: 0 4px 14px rgba(74,90,102,0.4); }
   .btn-primary:active { transform: scale(0.98); }
   .btn-primary:disabled { opacity: 0.5; cursor: not-allowed; transform: none; box-shadow: none; }
   .btn-sm {
@@ -532,7 +534,7 @@
     background: linear-gradient(135deg, var(--accent) 0%, var(--accent2) 100%);
     border-color: var(--accent);
     color: white; font-weight: 600;
-    box-shadow: 0 2px 6px rgba(200,16,46,0.25);
+    box-shadow: 0 2px 6px rgba(74,90,102,0.25);
   }
   .month-tab .count {
     background: rgba(0,0,0,0.1);
@@ -642,7 +644,7 @@
     border-radius: 8px;
     display: flex; align-items: center; justify-content: center;
     color: white; font-weight: 700; font-size: 12px;
-    box-shadow: 0 2px 6px rgba(200,16,46,0.25);
+    box-shadow: 0 2px 6px rgba(74,90,102,0.25);
   }
   .login-brand-name { font-family: 'Playfair Display', serif; font-size: 15px; font-weight: 700; letter-spacing: -0.2px; }
   .login-divider { width: 40px; height: 2px; background: var(--accent); border-radius: 2px; margin: 0 auto 18px; opacity: 0.4; }
@@ -710,7 +712,7 @@
   .pay-input:focus { outline:none; border-color:var(--accent); box-shadow:0 0 0 2px var(--accent-mid); }
   .pay-row-del { display:inline-flex; align-items:center; justify-content:center; width:18px; height:18px; padding:0; margin-left:4px; border:none; background:transparent; color:#c0392b; font-size:14px; font-weight:bold; line-height:1; cursor:pointer; border-radius:4px; vertical-align:middle; opacity:0.55; transition:all 0.15s; }
   .pay-row-del:hover { opacity:1; background:#c0392b; color:#fff; }
-  .pay-section-label td { background:#fbdde1; color:#71091b; font-size:9px; font-weight:800; letter-spacing:0.1em; text-transform:uppercase; border:none; padding:5px 10px; }
+  .pay-section-label td { background:#e7ebed; color:#262e34; font-size:9px; font-weight:800; letter-spacing:0.1em; text-transform:uppercase; border:none; padding:5px 10px; }
   .pay-legend { margin-top:18px; background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); padding:18px 22px; font-size:12px; color:var(--text2); line-height:1.7; }
   .pay-legend h4 { font-size:11px; text-transform:uppercase; letter-spacing:0.08em; color:var(--text2); margin:12px 0 4px; }
   .pay-legend h4:first-child { margin-top:0; }
@@ -746,10 +748,24 @@
     font-size:13px; font-weight:600; cursor:pointer; transition:all 0.18s;
   }
   .view-logs-btn:hover { border-color:var(--accent); background:var(--accent-light); }
-  .mylog-summary { display:grid; grid-template-columns:1fr 1fr 1fr; gap:10px; margin-bottom:18px; }
-  .mylog-stat { background:var(--surface2); border:1px solid var(--border); border-radius:var(--radius-sm); padding:12px; text-align:center; }
+  .mylog-summary { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-bottom:18px; }
+  .mylog-stat { background:var(--surface2); border:1px solid var(--border); border-radius:var(--radius-sm); padding:12px; text-align:center; position:relative; }
   .mylog-stat .v { font-size:22px; font-weight:700; color:var(--accent3); }
   .mylog-stat .l { font-size:10px; text-transform:uppercase; letter-spacing:0.05em; color:var(--text3); margin-top:2px; }
+  /* "+2" — how many of the videos in this count were added by an admin. */
+  .admin-chip {
+    position:absolute; top:8px; right:10px;
+    font-size:11px; font-weight:700; letter-spacing:0.02em;
+    color:var(--accent3); background:var(--accent-light);
+    border:1px solid var(--accent); border-radius:20px; padding:1px 7px;
+  }
+  .mylog-total {
+    display:flex; align-items:center; justify-content:space-between; gap:14px;
+    margin-bottom:18px; padding:15px 18px; border-radius:var(--radius-sm);
+    background:var(--accent); color:#fff;
+  }
+  .mylog-total .mt-l { font-size:12px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; opacity:0.8; }
+  .mylog-total .mt-v { font-family:'Playfair Display',serif; font-size:24px; font-weight:700; line-height:1; }
   .mylog-day { display:flex; align-items:flex-start; gap:12px; padding:9px 12px; border-bottom:1px solid var(--border); font-size:13px; }
   .mylog-day:last-child { border-bottom:none; }
   .mylog-day.today-row { background:var(--accent-light); border-radius:var(--radius-sm); }
@@ -1210,7 +1226,44 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-function todayStr() { const d = new Date(); return d.getFullYear() + '-' + String(d.getMonth()+1).padStart(2,'0') + '-' + String(d.getDate()).padStart(2,'0'); }
+// Lagos time, explicitly — not the creator's own phone clock. A creator on
+// the wrong device timezone was logging into the wrong calendar day and
+// losing money for it without knowing. Company policy, same as NorthQuest.
+function lagosParts() {
+  const parts = new Intl.DateTimeFormat('en-CA', {
+    timeZone: 'Africa/Lagos', year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', hour12: false
+  }).formatToParts(new Date());
+  const get = t => parts.find(p => p.type === t).value;
+  let hour = parseInt(get('hour'), 10);
+  if (hour === 24) hour = 0; // some engines report midnight as "24" with hour12:false
+  return { year: parseInt(get('year'),10), month: parseInt(get('month'),10), day: parseInt(get('day'),10), hour: hour };
+}
+function todayStr() {
+  const d = lagosParts();
+  return d.year + '-' + String(d.month).padStart(2,'0') + '-' + String(d.day).padStart(2,'0');
+}
+function yesterdayStr() {
+  const d = lagosParts();
+  const dt = new Date(Date.UTC(d.year, d.month - 1, d.day));
+  dt.setUTCDate(dt.getUTCDate() - 1);
+  return dt.getUTCFullYear() + '-' + String(dt.getUTCMonth()+1).padStart(2,'0') + '-' + String(dt.getUTCDate()).padStart(2,'0');
+}
+// Company policy, same cutoff on every brand. These must match the same two
+// lines in Code.gs — the server has the real say, this only decides what a
+// creator is shown.
+const GRACE_CUTOFF_HOUR = 14;
+const GRACE_EXTENSION_DATE = '';
+const GRACE_EXTENSION_HOUR = 24;
+function graceCutoffHour() {
+  return (GRACE_EXTENSION_DATE && GRACE_EXTENSION_DATE === todayStr()) ? GRACE_EXTENSION_HOUR : GRACE_CUTOFF_HOUR;
+}
+function graceCutoffLabel() {
+  const h = graceCutoffHour();
+  if (h >= 24) return 'midnight tonight';
+  if (h === 12) return 'noon';
+  return (h > 12 ? (h - 12) : h) + ':00 ' + (h >= 12 ? 'PM' : 'AM');
+}
+function graceWindowOpen() { return lagosParts().hour < graceCutoffHour(); }
 
 // Every date comparison in this file assumes a plain 'YYYY-MM-DD' string.
 // A Google Sheets date cell does not always come back that way — if the cell
@@ -1311,7 +1364,17 @@ function flushQueue() {
 function loadRows(attempt) {
   attempt = attempt || 0;
   const timeoutMs = Math.min(15000 + attempt * 10000, 45000);
-  jsonp({ action:'get' }, (data, err) => {
+  // A creator only ever looks at this month and last. Asking for the entire
+  // log — every creator, every day, since the beginning — is what times out
+  // on a phone, and a timed-out load is what locks the grace window and
+  // blames the connection. The admin console still receives everything.
+  const q = { action:'get' };
+  if (!isAdmin) {
+    const d = new Date();
+    d.setMonth(d.getMonth() - 1);
+    q.since = d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-01';
+  }
+  jsonp(q, (data, err) => {
     if (data && data.rows) {
       dataLoaded = true;
       rowsLoadFailed = false;
@@ -1401,6 +1464,23 @@ function retryLoadRows(btn) {
   dataLoaded = false;
   refreshAll();
   loadRows();
+}
+
+// Every screen below draws its numbers from allRows. dataLoaded turns true
+// even when every fetch attempt failed (that is what stops the spinner), so
+// a screen that only checks dataLoaded cannot tell "nobody logged anything"
+// apart from "we never found out" — it would otherwise render every video,
+// bonus and creator's own pay as zero on a failed load. Anything that reads
+// allRows for a real number must check rowsLoadFailed first and say so.
+function loadFailedBannerHtml() {
+  return '<div class="today-status s-unknown"><span class="s-icon">&#9888;</span>' +
+    '<span>Could not load the posting log, so the numbers on this screen cannot be trusted right now. ' +
+    '<button type="button" class="s-retry" onclick="retryLoadRows(this)">Try again</button></span></div>';
+}
+function loadFailedRowHtml(colspan) {
+  return '<tr><td colspan="' + colspan + '" class="empty-state">' +
+    '<strong>&#9888; Could not load the posting log.</strong><br>' +
+    '<button type="button" class="btn btn-sm" style="margin-top:8px" onclick="retryLoadRows(this)">Try again</button></td></tr>';
 }
 
 // ── POST CARDS — update the two video cards based on how many logged today ──
@@ -1755,6 +1835,14 @@ function refreshAll() {
   if (isAdmin) { renderDashboard(); renderManageCreators(); renderPayments(); }
   // Re-run the name status in case allRows just loaded/changed
   if (document.getElementById('f-name') && document.getElementById('f-name').value) onNameChange();
+  // If "View my logs" is open, keep it in step with whatever allRows just
+  // became — including a load that just failed while the creator was
+  // looking at it, which must show the warning, not a suddenly empty month.
+  const openFor = document.getElementById('modal-name');
+  if (!isAdmin && document.getElementById('creator-modal').classList.contains('open') &&
+      openFor && openFor.textContent) {
+    renderMyLogs(openFor.textContent);
+  }
 }
 
 function populateNameDropdown() {
@@ -1797,6 +1885,7 @@ function renderWeeklyGrid() {
   const creators = getActiveCreators();
   const tbody = document.getElementById('weekly-body');
   if (!dataLoaded || !creatorsLoaded) { tbody.innerHTML = '<tr><td colspan="9" class="empty-state"><span class="spinner"></span></td></tr>'; return; }
+  if (rowsLoadFailed) { tbody.innerHTML = loadFailedRowHtml(9); return; }
   if (!creators.length) { tbody.innerHTML = '<tr><td colspan="9" class="empty-state"><strong>No active creators</strong></td></tr>'; return; }
   tbody.innerHTML = creators.map(creator => {
     const rows = allRows.filter(r => r.name === creator);
@@ -1822,6 +1911,7 @@ function renderMonthTabs() {
   const months = getMonths();
   const el = document.getElementById('month-tabs');
   if (!dataLoaded) { el.innerHTML = '<span class="spinner"></span>'; return; }
+  if (rowsLoadFailed) { el.innerHTML = '<span style="color:var(--amber);font-size:13px">&#9888; Could not load — <button type="button" class="s-retry" style="font-size:13px" onclick="retryLoadRows(this)">try again</button></span>'; return; }
   if (!months.length) { el.innerHTML = '<span style="color:var(--text3);font-size:13px">No data yet</span>'; return; }
   if (!selectedMonth || !months.includes(selectedMonth)) selectedMonth = months[0];
   el.innerHTML = months.map(ym => {
@@ -1837,6 +1927,7 @@ function renderDetailedLog() {
   const tbody = document.getElementById('detailed-body');
   const statsEl = document.getElementById('month-stats');
   if (!dataLoaded) { tbody.innerHTML = '<tr><td colspan="6" class="empty-state"><span class="spinner"></span></td></tr>'; statsEl.style.display='none'; return; }
+  if (rowsLoadFailed) { tbody.innerHTML = loadFailedRowHtml(6); statsEl.style.display='none'; return; }
   if (!selectedMonth) { tbody.innerHTML = '<tr><td colspan="6" class="empty-state"><strong>No submissions yet</strong></td></tr>'; statsEl.style.display='none'; return; }
   const mRows = allRows.filter(r => monthYM(r.date) === selectedMonth);
   const mCreators = [...new Set(mRows.map(r => r.name))];
@@ -1881,14 +1972,56 @@ function closeModalOverlay(e) { if(e.target===document.getElementById('creator-m
 function closeModalDirect() { document.getElementById('creator-modal').classList.remove('open'); }
 
 // ── VIEW MY LOGS — creators check their own week + current month, no password ──
+// One creator's own rate. The roster withholds every rate from non-admins on
+// purpose, so without this a creator's own card fell back to a flat default
+// and showed the wrong figure to the person it belongs to.
+let myOwnRate = { name: '', rate: 0 };
+function creatorDefaultRate(name) {
+  const c = allCreators.find(x => String(x.name).toLowerCase() === String(name).toLowerCase());
+  if (c && parseFloat(c.rate)) return parseFloat(c.rate);
+  if (myOwnRate.rate && String(myOwnRate.name).toLowerCase() === String(name).toLowerCase()) {
+    return myOwnRate.rate;
+  }
+  return 200000;
+}
+
 function openMyLogs() {
   const name = document.getElementById('f-name').value.trim();
   if (!name) return;
   loadRows(); // refresh in the background so the view is as current as possible
   renderMyLogs(name);
+  loadMyPay(name);
+}
+
+// One creator's own pay figures. Never the whole register — that stays
+// admin-only. Silently gives up on failure: the logs are still worth
+// showing, and the pay figures simply stay as they were.
+function loadMyPay(name) {
+  if (isAdmin) return; // admin already has everyone loaded
+  jsonp({ action:'getMyPay', name:name, _bust: Date.now() }, (data) => {
+    if (!data || data.status !== 'success' || !data.payments) return;
+    const others = allPayments.filter(p => String(p.name).toLowerCase() !== name.toLowerCase());
+    allPayments = others.concat(data.payments);
+    if (data.rate && parseFloat(data.rate) > 0) myOwnRate = { name: name, rate: parseFloat(data.rate) };
+    const openFor = document.getElementById('modal-name');
+    if (document.getElementById('creator-modal').classList.contains('open') &&
+        openFor && openFor.textContent === name) {
+      renderMyLogs(name);
+    }
+  });
 }
 
 function renderMyLogs(name) {
+  // Show what we actually know, not a guess dressed up as fact. Without this,
+  // a failed load on a weak connection renders every day this month as "not
+  // logged" — indistinguishable from a creator who genuinely did nothing.
+  if (rowsLoadFailed) {
+    document.getElementById('modal-name').textContent = name;
+    document.getElementById('modal-sub').textContent = 'Your posting record';
+    document.getElementById('modal-body').innerHTML = loadFailedBannerHtml();
+    document.getElementById('creator-modal').classList.add('open');
+    return;
+  }
   const today = todayStr();
   const ym = today.substring(0, 7);
   const mine = allRows.filter(r => r.name.toLowerCase() === name.toLowerCase());
@@ -1897,13 +2030,6 @@ function renderMyLogs(name) {
   const byDate = {};
   monthRows.forEach(r => { if (!byDate[r.date]) byDate[r.date] = []; byDate[r.date].push(r); });
   const dayOfMonth = parseInt(today.split('-')[2]);
-  let fullDays = 0, missedDays = 0;
-  for (let d = 1; d <= dayOfMonth; d++) {
-    const ds = ym + '-' + String(d).padStart(2, '0');
-    const n = (byDate[ds] || []).length;
-    if (n >= 2) fullDays++;
-    else if (n === 0 && ds !== today) missedDays++;
-  }
 
   // One video = one fixed-width row: [chip][TikTok slot][Instagram slot].
   // A platform without a link shows a dash in its slot, so Video 1 and
@@ -1932,14 +2058,43 @@ function renderMyLogs(name) {
       '<div class="mylog-videos">' + vrow(v1, 1) + vrow(v2, 2) + '</div></div>');
   }
 
+  // Pay figures, same source of truth as the Payment register. postsCredit
+  // is what an admin adds by hand on top of what was actually logged — that
+  // credit is what "counts" here, not just the raw log count.
+  const man = allPayments.find(p => p.month === ym && String(p.name).toLowerCase() === name.toLowerCase()) || {};
+  const creditRaw = String(man.postsCredit || '');
+  const overrideRaw = String(man.postsOverride || '');
+  const hasCredit = creditRaw !== '' && !isNaN(parseFloat(creditRaw));
+  const hasLegacyOverride = !hasCredit && overrideRaw !== '' && !isNaN(parseFloat(overrideRaw));
+  const credit = hasCredit ? parseFloat(creditRaw) : 0;
+  const effPosts = hasLegacyOverride ? parseFloat(overrideRaw) : (monthRows.length + credit);
+  const maxVideos = 62;
+  const monthlySalary = creatorDefaultRate(name);
+  const ratePerVideo = monthlySalary / maxVideos;
+  const baseAmount = effPosts * ratePerVideo;
+  // Sale bonuses and any one-off special bonus fold straight into the one
+  // amount a creator sees — no separate bonus tile on this dashboard, but
+  // the figure is still honest about everything they are actually owed.
+  // calcSaleBonus is the same parser the admin's own Payments total uses.
+  const saleBonusTotal = calcSaleBonus(man.saleBonuses || '');
+  const special = parseFloat(String(man.specialBonus || '').replace(/[^\d.]/g, '')) || 0;
+  const totalOv = String(man.totalOverride || '').replace(/[^\d.]/g, '');
+  const amountExpected = (totalOv !== '' && !isNaN(parseFloat(totalOv)))
+    ? parseFloat(totalOv) : (baseAmount + saleBonusTotal + special);
+  // Videos an admin added show as a "+2" chip in the corner of the count —
+  // of the total, that many came from admin credit, not fresh code to type.
+  const adminChip = credit > 0 ? '<span class="admin-chip">+' + Math.round(credit) + '</span>' : '';
+
   document.getElementById('modal-name').textContent = name;
   document.getElementById('modal-sub').textContent = 'Your posting record — ' + monthLabel(ym);
   document.getElementById('modal-body').innerHTML =
     '<div class="mylog-summary">' +
-      '<div class="mylog-stat"><div class="v">' + monthRows.length + '</div><div class="l">Videos this month</div></div>' +
-      '<div class="mylog-stat"><div class="v">' + fullDays + '</div><div class="l">Days fully done</div></div>' +
-      '<div class="mylog-stat"><div class="v">' + missedDays + '</div><div class="l">Days missed</div></div>' +
+      '<div class="mylog-stat">' + adminChip + '<div class="v">' + effPosts + '</div><div class="l">Videos logged</div></div>' +
+      '<div class="mylog-stat"><div class="v">' + maxVideos + '</div><div class="l">Videos expected</div></div>' +
+      '<div class="mylog-stat"><div class="v">&#8358;' + Math.round(ratePerVideo).toLocaleString('en-NG') + '</div><div class="l">Rate per post</div></div>' +
+      '<div class="mylog-stat"><div class="v">&#8358;' + Math.round(amountExpected).toLocaleString('en-NG') + '</div><div class="l">Amount</div></div>' +
     '</div>' +
+    '<div class="mylog-total"><span class="mt-l">Total</span><span class="mt-v">&#8358;' + Math.round(amountExpected).toLocaleString('en-NG') + '</span></div>' +
     '<div style="font-size:12px;color:var(--text2);margin-bottom:16px;background:var(--accent-light);border-radius:8px;padding:10px 12px">A &#x2713; means that video was logged successfully. Just submitted a video? Open this view to confirm it went through.</div>' +
     '<div class="month-block"><div class="month-block-header"><span class="month-block-name">' + monthLabel(ym) + '</span><span class="month-block-total">' + monthRows.length + ' of 62 videos</span></div>' + dayRowsHtml.join('') + '</div>';
   document.getElementById('creator-modal').classList.add('open');
@@ -1954,11 +2109,19 @@ function renderDashboard() {
   const dashHeader = document.getElementById('dash-progress-header');
   if (dashHeader) dashHeader.textContent = 'Progress (' + dashMaxVideos + ')';
   const creators = getActiveCreators();
+  const tbody = document.getElementById('dash-body');
+  if (rowsLoadFailed) {
+    document.getElementById('d-total').textContent = '—';
+    document.getElementById('d-month').textContent = '—';
+    document.getElementById('d-creators').textContent = creators.length;
+    document.getElementById('d-today').textContent = '—';
+    tbody.innerHTML = loadFailedRowHtml(6);
+    return;
+  }
   document.getElementById('d-total').textContent    = allRows.length;
   document.getElementById('d-month').textContent    = allRows.filter(r => r.date.startsWith(curMYM)).length;
   document.getElementById('d-creators').textContent = creators.length;
   document.getElementById('d-today').textContent    = allRows.filter(r => r.date === today).length;
-  const tbody = document.getElementById('dash-body');
   if (!creators.length) { tbody.innerHTML = '<tr><td colspan="6" class="empty-state"><strong>No active creators</strong></td></tr>'; return; }
   const sorted = creators.map(name => {
     const rows = allRows.filter(r => r.name === name);
@@ -2287,7 +2450,11 @@ function renderManageCreators() {
     const left = leftRaw
       ? '<span title="Recorded when the creator was deactivated (or their last logged post for older records)">' + new Date(leftRaw + 'T00:00:00').toLocaleDateString('en-GB',{day:'numeric',month:'short',year:'numeric'}) + '</span>'
       : '—';
-    const posts = allRows.filter(r => r.name===c.name).length;
+    // rowsLoadFailed means we genuinely do not know this creator's count —
+    // show that honestly rather than a 0 that reads as "nobody posted".
+    const postsCell = rowsLoadFailed
+      ? '<span title="Could not load the posting log" style="color:var(--amber)">&#9888;</span>'
+      : allRows.filter(r => r.name===c.name).length;
     return '<tr data-creator="' + escH(c.name) + '"><td><span class="creator-link" onclick="openModal(\'' + escH(c.name) + '\')">' + escH(c.name) + '</span></td>' +
       '<td>' + badge + '</td>' +
       '<td>' + contractCell(c) + '</td>' +
@@ -2296,7 +2463,7 @@ function renderManageCreators() {
       '<td>' + (isActive ? saleControl(c.name) : '<span style="color:var(--text3)">—</span>') + '</td>' +
       '<td style="color:var(--text3)">' + added + '</td>' +
       '<td style="color:var(--text3)">' + left + '</td>' +
-      '<td style="color:var(--text2)">' + posts + '</td>' +
+      '<td style="color:var(--text2)">' + postsCell + '</td>' +
       '<td><div style="display:flex;gap:6px;flex-wrap:wrap">' +
       '<button class="btn btn-sm ' + (isActive?'btn-danger':'') + '" onclick="toggleCreator(\'' + escH(c.name) + '\')">' + (isActive?'Deactivate':'Reactivate') + '</button>' +
       '<button class="btn btn-sm btn-delete" onclick="deleteCreator(\'' + escH(c.name) + '\')">Delete</button>' +
@@ -2496,6 +2663,15 @@ function renderPayments() {
   const body = document.getElementById('pay-body');
   if (!tabsEl || !body) return;
   if (!dataLoaded || !creatorsLoaded) { body.innerHTML = '<tr><td colspan="14" class="empty-state"><span class="spinner"></span></td></tr>'; return; }
+  // Every figure on this table is money. Refusing to show it is safer than
+  // showing a total built on a posting log we know failed to load.
+  if (rowsLoadFailed) {
+    tabsEl.innerHTML = '';
+    body.innerHTML = loadFailedRowHtml(14);
+    document.getElementById('pay-period').textContent = '';
+    document.getElementById('pay-legend').innerHTML = '';
+    return;
+  }
   const months = getMonths();
   if (!months.length) {
     tabsEl.innerHTML = '<span style="color:var(--text3);font-size:13px">No data yet</span>';
